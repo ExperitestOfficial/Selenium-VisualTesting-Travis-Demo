@@ -19,3 +19,13 @@ dependencies {
     testCompile group: 'org.testng', name: 'testng', version: '6.11'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.5.3'
 }
+
+task runTests(type: JavaExec, dependsOn: 'classes') {
+    main = 'org.testng.TestNG'
+    classpath = files("./src/test/resources",
+                      project.sourceSets.main.compileClasspath,
+                      project.sourceSets.test.compileClasspath,
+                      project.sourceSets.main.runtimeClasspath,
+                      project.sourceSets.test.runtimeClasspath)
+    args = ["-parallel",  "methods", "-threadcount", "1", "-d", "./build/test-output", "./testng.xml"]
+}
