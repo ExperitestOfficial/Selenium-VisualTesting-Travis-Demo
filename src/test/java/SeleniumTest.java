@@ -18,7 +18,7 @@ import java.net.URL;
 
 public class SeleniumTest {
 
-    private static final String ACCESS_KEY = "";
+    private static final String ACCESS_KEY = System.getenv("ACCESS_KEY");
     private WebDriver driver;
     private URL url;
     private DesiredCapabilities dc = new DesiredCapabilities();
