@@ -18,7 +18,7 @@ import java.net.URL;
 
 public class SeleniumTest {
 
-    private static final String ACCESS_KEY = "eyJ4cC51IjoxMjcsInhwLnAiOjIsInhwLm0iOiJNVFV5TXpnM01qRTVNRFl3TnciLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE4NDcxMDIzMTksImlzcyI6ImNvbS5leHBlcml0ZXN0In0.PlDsDAItJI_fq798Wz8jeq4k7fZoux2H3HZjD9fevXk";
+    private static final String ACCESS_KEY = "";
     private WebDriver driver;
     private URL url;
     private DesiredCapabilities dc = new DesiredCapabilities();
