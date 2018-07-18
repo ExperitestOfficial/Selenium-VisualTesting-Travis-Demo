@@ -18,7 +18,7 @@ repositories {
 dependencies {
     testCompile group: 'org.testng', name: 'testng', version: '6.11'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.5.3'
-    compile group: "com.experitest", name:"visual",version:"+"
+    compile group: "com.experitest", name:"visual",version:"0.10"
 }
 
 task runTests(type: JavaExec, dependsOn: 'classes') {
