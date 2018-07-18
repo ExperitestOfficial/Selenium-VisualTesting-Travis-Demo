@@ -46,7 +46,7 @@ public class SeleniumTest {
         // you should one time set your access key:
         in.Visual.setAccessKey(VISUAL_ACCESS_KEY);
         boolean result = in.Visual.verify(driver, "GoogleTest");
-        System.out.println(in.Visual.getLastResultUrl());
+        System.out.println("**" + in.Visual.getLastResultUrl() + "**");
         WebElement searchBar = driver.findElement(By.id("lst-ib"));
         searchBar.click();
         searchBar.sendKeys("Experitest");
