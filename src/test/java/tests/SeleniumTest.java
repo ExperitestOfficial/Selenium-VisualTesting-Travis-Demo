@@ -34,6 +34,7 @@ public class SeleniumTest {
         dc.setCapability(CapabilityType.PLATFORM, Platform.ANY);
         dc.setCapability("accessKey", CLOUD_ACCESS_KEY);
         dc.setCapability("testName", "Quick Start Chrome Browser Demo");
+        dc.setCapability("seleniumScreenShot", true);
         driver = new RemoteWebDriver(url, dc);
     }
 
@@ -46,7 +47,6 @@ public class SeleniumTest {
         in.Visual.setAccessKey(VISUAL_ACCESS_KEY);
         boolean result = in.Visual.verify(driver, "GoogleHome");
         System.out.println(in.Visual.getLastResultUrl());
-
         WebElement searchBar = driver.findElement(By.id("lst-ib"));
         searchBar.click();
         searchBar.sendKeys("Experitest");
