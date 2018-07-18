@@ -19,8 +19,7 @@ import java.net.URL;
 
 public class SeleniumTest {
 
-    private static final String CLOUD_ACCESS_KEY = System.getenv("CLOUD_ACCESS_KEY");
-    private static final String VISUAL_ACCESS_KEY = System.getenv("VISUAL_ACCESS_KEY");
+    private static final String ACCESS_KEY = System.getenv("ACCESS_KEY");
     private WebDriver driver;
     private URL url;
     private DesiredCapabilities dc = new DesiredCapabilities();
@@ -32,7 +31,7 @@ public class SeleniumTest {
         dc.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
         dc.setCapability(CapabilityType.VERSION, "Any");
         dc.setCapability(CapabilityType.PLATFORM, Platform.ANY);
-        dc.setCapability("accessKey", CLOUD_ACCESS_KEY);
+        dc.setCapability("accessKey", ACCESS_KEY);
         dc.setCapability("testName", "Quick Start Chrome Browser Demo");
         driver = new RemoteWebDriver(url, dc);
     }
@@ -42,11 +41,6 @@ public class SeleniumTest {
     public void testExperitest() {
         driver.get("https://www.google.com");
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("lst-ib")));
-        // you should one time set your access key:
-        in.Visual.setAccessKey(VISUAL_ACCESS_KEY);
-        boolean result = in.Visual.verify(driver, "GoogleHome");
-        System.out.println(in.Visual.getLastResultUrl());
-
         WebElement searchBar = driver.findElement(By.id("lst-ib"));
         searchBar.click();
         searchBar.sendKeys("Experitest");
