@@ -36,7 +36,7 @@ public class SeleniumTest {
         dc.setCapability(CapabilityType.PLATFORM, Platform.XP);
         dc.setCapability("accessKey", CLOUD_ACCESS_KEY);
         dc.setCapability("testName", "Travis Visual Testing Demo");
-        dc.setCapability("seleniumScreenShot", true);
+        dc.setCapability("seleniumScreenshot", true);
         driver = new RemoteWebDriver(url, dc);
     }
 
