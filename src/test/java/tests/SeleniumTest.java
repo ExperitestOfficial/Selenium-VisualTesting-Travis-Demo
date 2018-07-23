@@ -40,11 +40,18 @@ public class SeleniumTest {
 
     @Test
     public void testExperitest() {
-        driver.get("https://github.com/login");
+        driver.get("https://www.google.com/");
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("lst-ib")));
+        WebElement search_field = driver.findElement(By.id("lst-ib"));
+        search_field.sendKeys("github login");
+        search_field.sendKeys(Keys.RETURN);
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div/div/h3/a")));
+        WebElement first_result = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div/div/h3/a"));
+        first_result.click();
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("login_field")));
         in.Visual.setAccessKey(VISUAL_ACCESS_KEY);
         boolean result  = in.Visual.verify(driver,"GitHubTest");
-        System.out.println("Report Link:" + in.Visual.getLastResultUrl());
+        System.out.println("Report Link: " + in.Visual.getLastResultUrl());
     }
 
     @AfterMethod
