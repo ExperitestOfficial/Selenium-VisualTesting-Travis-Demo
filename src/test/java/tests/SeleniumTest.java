@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.net.URL;
@@ -25,11 +26,12 @@ public class SeleniumTest {
     private URL url;
     private DesiredCapabilities dc = new DesiredCapabilities();
 
+    @Parameters({"browser_name"})
     @BeforeMethod
-    public void setUp() throws Exception {
+    public void setUp(String browser_name) throws Exception {
 
         url = new URL("https://sales.experitest.com:443/wd/hub");
-        dc.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
+        dc.setCapability(CapabilityType.BROWSER_NAME, browser_name);
         dc.setCapability(CapabilityType.VERSION, "Any");
         dc.setCapability("accessKey", CLOUD_ACCESS_KEY);
         dc.setCapability("testName", "Travis Visual Testing Demo");

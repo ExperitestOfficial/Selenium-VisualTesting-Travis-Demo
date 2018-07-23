@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test name="Test">
+  <test name="Test1">
+  <parameter name="browser_name" value="chrome"/>
+    <classes>
+      <class name="tests.SeleniumTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test2">
+  <parameter name="browser_name" value="firefox"/>
     <classes>
       <class name="tests.SeleniumTest"/>
     </classes>
