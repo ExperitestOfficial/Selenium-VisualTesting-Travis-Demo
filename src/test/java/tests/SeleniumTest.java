@@ -33,6 +33,7 @@ public class SeleniumTest {
         url = new URL("https://sales.experitest.com:443/wd/hub");
         dc.setCapability(CapabilityType.BROWSER_NAME, browser_name);
         dc.setCapability(CapabilityType.VERSION, "Any");
+        dc.setCapability(CapabilityType.PLATFORM, Platform.XP);
         dc.setCapability("accessKey", CLOUD_ACCESS_KEY);
         dc.setCapability("testName", "Travis Visual Testing Demo");
         dc.setCapability("seleniumScreenShot", true);
