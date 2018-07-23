@@ -31,9 +31,8 @@ public class SeleniumTest {
         url = new URL("https://sales.experitest.com:443/wd/hub");
         dc.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
         dc.setCapability(CapabilityType.VERSION, "Any");
-        dc.setCapability(CapabilityType.PLATFORM, Platform.ANY);
         dc.setCapability("accessKey", CLOUD_ACCESS_KEY);
-        dc.setCapability("testName", "Quick Start Chrome Browser Demo");
+        dc.setCapability("testName", "Travis Visual Testing Demo");
         dc.setCapability("seleniumScreenShot", true);
         driver = new RemoteWebDriver(url, dc);
     }
@@ -41,16 +40,11 @@ public class SeleniumTest {
 
     @Test
     public void testExperitest() {
-        driver.get("https://www.google.com");
-        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("lst-ib")));
-        // you should one time set your access key:
+        driver.get("https://github.com/login");
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("login_field")));
         in.Visual.setAccessKey(VISUAL_ACCESS_KEY);
-        boolean result = in.Visual.verify(driver, "GoogleTest");
+        boolean result  = in.Visual.verify(driver,"GitHubTest");
         System.out.println("Report Link:" + in.Visual.getLastResultUrl());
-        WebElement searchBar = driver.findElement(By.id("lst-ib"));
-        searchBar.click();
-        searchBar.sendKeys("Experitest");
-        searchBar.sendKeys(Keys.ENTER);
     }
 
     @AfterMethod
