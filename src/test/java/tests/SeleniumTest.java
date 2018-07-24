@@ -26,13 +26,12 @@ public class SeleniumTest {
     private URL url;
     private DesiredCapabilities dc = new DesiredCapabilities();
 
-    @Parameters({"browser_name"})
+    @Parameters({"browser_name", "browser_version"})
     @BeforeMethod
-    public void setUp(String browser_name) throws Exception {
-
+    public void setUp(String browser_name, String browser_version) throws Exception {
         url = new URL("https://sales.experitest.com:443/wd/hub");
         dc.setCapability(CapabilityType.BROWSER_NAME, browser_name);
-        dc.setCapability(CapabilityType.VERSION, "Any");
+        dc.setCapability(CapabilityType.VERSION, browser_version);
         dc.setCapability(CapabilityType.PLATFORM, Platform.XP);
         dc.setCapability("accessKey", CLOUD_ACCESS_KEY);
         dc.setCapability("testName", "Travis Visual Testing Demo");
