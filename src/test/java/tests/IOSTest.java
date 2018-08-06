@@ -36,7 +36,7 @@ public class IOSTest {
     	dc.setCapability(MobileCapabilityType.UDID, "0cacc0ade2a6869bb3578d52c58b9d7693b832bd");
         dc.setCapability("accessKey", CLOUD_ACCESS_KEY);
         dc.setCapability("testName", "Travis Visual Testing Demo - iOS");
-        dc.setBrowserName(MobileBrowserType.SAFARI);
+        //dc.setBrowserName(MobileBrowserType.SAFARI);
         //dc.setCapability("seleniumScreenshot", true);
         driver = new IOSDriver<>(new URL("https://sales.experitest.com:443/wd/hub"), dc);
     }

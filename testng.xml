@@ -16,13 +16,15 @@
   		</classes>
   	</test> <!-- Test -->
   	<test name="Test3">
+  		<parameter name="UDID" value="N2K7N16811000808"/>
     	<classes>
       		<class name="tests.AndroidTest"/>
     	</classes>
   	</test> <!-- Test -->
   	<test name="Test4">
+  		<parameter name="UDID" value="00db17d862b2bd18"/>
     	<classes>
-      		<class name="tests.IOSTest"/>
+      		<class name="tests.AndroidTest"/>
     	</classes>
   	</test> <!-- Test -->
 </suite> <!-- Suite -->

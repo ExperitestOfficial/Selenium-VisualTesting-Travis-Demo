@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -27,11 +28,12 @@ public class AndroidTest {
     protected AndroidDriver<AndroidElement> driver = null;
     private DesiredCapabilities dc = new DesiredCapabilities().chrome();
 
+    @Parameters({"UDID"})
     @BeforeMethod
-    public void setUp() throws MalformedURLException {
+    public void setUp(String UDID) throws MalformedURLException {
         //dc.setCapability("deviceQuery", "@os='android' and @category='PHONE'");
     	//dc.setCapability(MobileCapabilityType.UDID, "00db17d862b2bd18");
-    	dc.setCapability(MobileCapabilityType.UDID, "N2K7N16811000808");
+    	dc.setCapability(MobileCapabilityType.UDID, UDID);
         dc.setCapability("accessKey", CLOUD_ACCESS_KEY);
         dc.setCapability("testName", "Travis Visual Testing Demo - Android");
         dc.setBrowserName(MobileBrowserType.CHROME);
