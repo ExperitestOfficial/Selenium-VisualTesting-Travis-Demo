@@ -20,4 +20,9 @@
       		<class name="tests.AndroidTest"/>
     	</classes>
   	</test> <!-- Test -->
+  	<test name="Test3">
+    	<classes>
+      		<class name="tests.IOSTest"/>
+    	</classes>
+  	</test> <!-- Test -->
 </suite> <!-- Suite -->

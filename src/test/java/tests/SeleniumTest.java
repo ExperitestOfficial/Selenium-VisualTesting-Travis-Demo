@@ -52,7 +52,7 @@ public class SeleniumTest {
         first_result.click();
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("login_field")));
         in.Visual.setAccessKey(VISUAL_ACCESS_KEY);
-        boolean result  = in.Visual.verify(driver,"github_demo");
+        boolean result  = in.Visual.verify(driver, "github_login_page");
         System.out.println("Report Link: " + in.Visual.getLastResultUrl());
     }
 

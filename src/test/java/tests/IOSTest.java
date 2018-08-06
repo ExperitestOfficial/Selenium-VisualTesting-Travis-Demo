@@ -13,6 +13,8 @@ import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.remote.MobileBrowserType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
@@ -20,23 +22,23 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 
-public class AndroidTest {
+public class IOSTest {
 
     private static final String CLOUD_ACCESS_KEY = System.getenv("CLOUD_ACCESS_KEY");
     private static final String VISUAL_ACCESS_KEY = System.getenv("VISUAL_ACCESS_KEY");
-    protected AndroidDriver<AndroidElement> driver = null;
-    private DesiredCapabilities dc = new DesiredCapabilities().chrome();
+    protected IOSDriver<IOSElement> driver = null;
+    private DesiredCapabilities dc = new DesiredCapabilities().safari();
 
     @BeforeMethod
     public void setUp() throws MalformedURLException {
         //dc.setCapability("deviceQuery", "@os='android' and @category='PHONE'");
     	//dc.setCapability(MobileCapabilityType.UDID, "00db17d862b2bd18");
-    	dc.setCapability(MobileCapabilityType.UDID, "N2K7N16811000808");
+    	dc.setCapability(MobileCapabilityType.UDID, "0cacc0ade2a6869bb3578d52c58b9d7693b832bd");
         dc.setCapability("accessKey", CLOUD_ACCESS_KEY);
-        dc.setCapability("testName", "Travis Visual Testing Demo - Android");
-        dc.setBrowserName(MobileBrowserType.CHROME);
+        dc.setCapability("testName", "Travis Visual Testing Demo - iOS");
+        dc.setBrowserName(MobileBrowserType.SAFARI);
         //dc.setCapability("seleniumScreenshot", true);
-        driver = new AndroidDriver<>(new URL("https://sales.experitest.com:443/wd/hub"), dc);
+        driver = new IOSDriver<>(new URL("https://sales.experitest.com:443/wd/hub"), dc);
     }
 
 
